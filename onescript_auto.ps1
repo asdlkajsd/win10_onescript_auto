@@ -1,9 +1,13 @@
+# @2020 COPYRIGHT TO MINSEO CHOI 
+# @2020 COPYRIGHT TO WASHINGTON CHODAE CHURCH
+#
 #     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JkEOe')"
 # Default preset
 clear-host
 $tweaks = @(
-	### Require administrator privileges ###
+	### Required ###
 	"RequireAdmin"
+	"RequireInternetAccess"
 	
 	### Chris Titus Tech Additions
 	#"TitusRegistryTweaks",
@@ -2527,6 +2531,15 @@ Function RequireAdmin {
 	If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
 		Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" $PSCommandArgs" -WorkingDirectory $pwd -Verb RunAs
 		Exit
+	}
+}
+
+# Check Internet Connections
+Function RequireInternetAccess {
+	while (!(test-connection 8.8.8.8 -Count 1 -Quiet)) {
+    	Write-Output "Need Internet Access"
+	sleep 10
+	exit
 	}
 }
 

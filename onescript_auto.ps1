@@ -287,7 +287,7 @@ Function InstallChrome {
 }
 
 Function InstallJava {
-	Show-Choco-Menu -Title "Do you want to install Java?" -ChocoInstall "jre8"
+	Show-Choco-Menu -Title "Do you want to install Java?" -ChocoInstall "jre8" -y
 	Write-Output "Installing Java"
 }
 

@@ -1,3 +1,4 @@
+#     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JkE48')"
 # Default preset
 $tweaks = @(
 	### Require administrator privileges ###

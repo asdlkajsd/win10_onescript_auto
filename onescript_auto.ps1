@@ -279,6 +279,7 @@ Function ChangeDefaultApps {
 
 Function InstallNotepadplusplus {
 	Show-Choco-Menu -Title "Do you want to install Notepad++?" -ChocoInstall "notepadplusplus" -y
+	Write-Output "Installing Notepad++"
 }
 
 Function InstallChrome {
@@ -287,6 +288,7 @@ Function InstallChrome {
 
 Function InstallJava {
 	Show-Choco-Menu -Title "Do you want to install Java?" -ChocoInstall "jre8"
+	Write-Output "Installing Java"
 }
 
 ##########

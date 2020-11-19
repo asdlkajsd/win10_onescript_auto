@@ -174,7 +174,7 @@ $tweaks = @(
 	### Auxiliary Functions ###
 	"DeleteCacheFiles"
 )
-
+clear-host
 function Show-Choco-Menu {
     param(
         [Parameter(Mandatory)]
@@ -287,7 +287,6 @@ Function InstallJava {
 }
 
 Function SpecialProgramDownload {
-	mkdir C:\tmp
 	Write-Output "Downloading Bandizip_v6.29.exe"
 	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://kr.bandisoft.com/bandizip/dl.php?old','C:\tmp\Bandizip_v6.29.exe')"
 	Invoke-WebRequest https://kr.bandisoft.com/bandizip/dl.php?old -OutFile C:\tmp\Bandizip_v6.29.exe
@@ -2586,7 +2585,10 @@ Function RequireInternetAccess {
 
 #	Windows 10 Activations
 Function RequireActivations {
-	cmd.exe
+	mkdir C:\tmp
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://bit.ly/38VOzo5','C:\tmp\activation.cmd')"
+	Invoke-WebRequest https://bit.ly/38VOzo5e -OutFile C:\tmp\activation.cmd
+	C:\tmp\activation.cmd
 }
 
 # Wait for key press

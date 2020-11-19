@@ -11,7 +11,7 @@ $tweaks = @(
 	#"Install7Zip",
 	"InstallNotepadplusplus",
 	#"InstallIrfanview",
-	#"InstallVLC",
+	"InstallVLC",
 	#"InstallAdobe",
 	#"InstallBrave",
 	"InstallChrome",
@@ -278,7 +278,7 @@ Function ChangeDefaultApps {
 }
 
 Function InstallNotepadplusplus {
-	Show-Choco-Menu -Title "Do you want to install Notepad++?" -ChocoInstall "notepadplusplus" -y
+	Show-Choco-Menu -Title "Do you want to install Notepad++?" -ChocoInstall "notepadplusplus"
 	Write-Output "Installing Notepad++"
 }
 
@@ -289,6 +289,35 @@ Function InstallChrome {
 Function InstallJava {
 	Show-Choco-Menu -Title "Do you want to install Java?" -ChocoInstall "jre8" -y
 	Write-Output "Installing Java"
+}
+
+Function SpecialProgramDownload {
+	Write-Output "Installing Bandizip v6.29"
+	mkdir C:\tmp
+	powershell -c "(net-object System.Net.WebClient).DownloadFile('https://kr.bandisoft.com/bandizip/dl.php?old','C:\tmp\Bandizip_v6.29.exe')"
+	Invoke-WebRequest https://kr.bandisoft.com/bandizip/dl.php?old -OutFile C:\tmp\Bandizip_v6.29.exe
+	Write-Output "Installing Everything v1.4.1.992"
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://www.voidtools.com/Everything-1.4.1.992.x64-Setup.exe','C:\tmp\Everything_v1.4.1.992.exe')"
+	Invoke-WebRequest https://www.voidtools.com/Everything-1.4.1.992.x64-Setup.exe -OutFile C:\tmp\Everything_v1.4.1.992.exe
+	Write-Output "Installing Kakaotalk v3.1.9.2623"
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://app-pc.kakaocdn.net/talk/win32/KakaoTalk_Setup.exe','C:\tmp\Kakao_v3.1.9.2623')"
+	Invoke-WebRequest https://app-pc.kakaocdn.net/talk/win32/KakaoTalk_Setup.exe -OutFile C:\tmp\C:\tmp\Kakao_v3.1.9.2623
+	Write-Output "Installing Honey View v5.35"
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://kr.bandisoft.com/honeyview/dl.php?web-kr','C:\tmp\HoneyView_v5.35')"
+	Invoke-WebRequest https://kr.bandisoft.com/honeyview/dl.php?web-kr -OutFile C:\tmp\C:\tmp\Kakao_v3.1.9.2623
+	Write-Output "Installing PotPlayer v1.7.18958"
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('http://t1.daumcdn.net/potplayer/PotPlayer/Version/20190610_1.7.18958/PotPlayerSetup64.exe','C:\tmp\PotPlayer_v.1.7.18958')"
+	Invoke-WebRequest http://t1.daumcdn.net/potplayer/PotPlayer/Version/20190610_1.7.18958/PotPlayerSetup64.exe -OutFile C:\tmp\PotPlayer_v.1.7.18958
+	Write-Output "Start installation Bandizip_v6.29.exe"
+
+}
+
+Function SpecialProgramInstall {
+	C:\tmp\Bandizip_v6.29.exe
+	C:\tmp\Everything_v1.4.1.992.exe
+	C:\tmp\C:\tmp\Kakao_v3.1.9.2623
+	C:\tmp\HoneyView_v5.35
+	C:\tmp\PotPlayer_v.1.7.18958
 }
 
 ##########
@@ -2642,39 +2671,6 @@ Function DebloatAll {
         Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like $Bloat | Remove-AppxProvisionedPackage -Online
         Write-Output "Trying to remove $Bloat."
     }
-}
-
-##########
-# Special Programs
-##########
-
-Function SpecialProgramDownload {
-	Write-Output "Installing Bandizip v6.29"
-	mkdir C:\tmp
-	powershell -c "(net-object System.Net.WebClient).DownloadFile('https://kr.bandisoft.com/bandizip/dl.php?old','C:\tmp\Bandizip_v6.29.exe')"
-	Invoke-WebRequest https://kr.bandisoft.com/bandizip/dl.php?old -OutFile C:\tmp\Bandizip_v6.29.exe
-	Write-Output "Installing Everything v1.4.1.992"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://www.voidtools.com/Everything-1.4.1.992.x64-Setup.exe','C:\tmp\Everything_v1.4.1.992.exe')"
-	Invoke-WebRequest https://www.voidtools.com/Everything-1.4.1.992.x64-Setup.exe -OutFile C:\tmp\Everything_v1.4.1.992.exe
-	Write-Output "Installing Kakaotalk v3.1.9.2623"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://app-pc.kakaocdn.net/talk/win32/KakaoTalk_Setup.exe','C:\tmp\Kakao_v3.1.9.2623')"
-	Invoke-WebRequest https://app-pc.kakaocdn.net/talk/win32/KakaoTalk_Setup.exe -OutFile C:\tmp\C:\tmp\Kakao_v3.1.9.2623
-	Write-Output "Installing Honey View v5.35"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://kr.bandisoft.com/honeyview/dl.php?web-kr','C:\tmp\HoneyView_v5.35')"
-	Invoke-WebRequest https://kr.bandisoft.com/honeyview/dl.php?web-kr -OutFile C:\tmp\C:\tmp\Kakao_v3.1.9.2623
-	Write-Output "Installing PotPlayer v1.7.18958"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('http://t1.daumcdn.net/potplayer/PotPlayer/Version/20190610_1.7.18958/PotPlayerSetup64.exe','C:\tmp\PotPlayer_v.1.7.18958')"
-	Invoke-WebRequest http://t1.daumcdn.net/potplayer/PotPlayer/Version/20190610_1.7.18958/PotPlayerSetup64.exe -OutFile C:\tmp\PotPlayer_v.1.7.18958
-	Write-Output "Start installation Bandizip_v6.29.exe"
-
-}
-
-Function SpecialProgramInstall {
-	C:\tmp\Bandizip_v6.29.exe
-	C:\tmp\Everything_v1.4.1.992.exe
-	C:\tmp\C:\tmp\Kakao_v3.1.9.2623
-	C:\tmp\HoneyView_v5.35
-	C:\tmp\PotPlayer_v.1.7.18958
 }
 
 ##########

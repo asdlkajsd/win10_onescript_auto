@@ -1,6 +1,7 @@
 # @2020 COPYRIGHT TO MINSEO CHOI 
 # @2020 COPYRIGHT TO WASHINGTON CHODAE CHURCH
 # LAST UPDATE: 2020-11-19
+# 	Activation Link: http://www.mediafire.com/file/ir5prt4cw7tuk4p/KMS_ACT_ORIGINAL.cmd/file
 #
 #     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JkEOe')"
 # Default preset
@@ -2586,8 +2587,8 @@ Function RequireInternetAccess {
 #	Windows 10 Activations
 Function RequireActivations {
 	mkdir C:\tmp
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://bit.ly/38VOzo5','C:\tmp\activation.cmd')"
-	Invoke-WebRequest https://bit.ly/38VOzo5e -OutFile C:\tmp\activation.cmd
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('http://download939.mediafire.com/7c5y04tpf0qg/ir5prt4cw7tuk4p/KMS_ACT_ORIGINAL.cmd','C:\tmp\activation.cmd')"
+	Invoke-WebRequest http://download939.mediafire.com/7c5y04tpf0qg/ir5prt4cw7tuk4p/KMS_ACT_ORIGINAL.cmd -OutFile C:\tmp\activation.cmd
 	C:\tmp\activation.cmd
 }
 

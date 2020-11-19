@@ -2649,7 +2649,7 @@ Function DebloatAll {
 Function SpecialProgramDownload {
 	Write-Output "Installing Bandizip v6.29"
 	mkdir C:\tmp
-	powershell –c "(new-object System.Net.WebClient).DownloadFile('https://kr.bandisoft.com/bandizip/dl.php?old','C:\tmp\Bandizip_v6.29.exe')"
+	powershell -c "(net-object System.Net.WebClient).DownloadFile('https://kr.bandisoft.com/bandizip/dl.php?old','C:\tmp\Bandizip_v6.29.exe')"
 	Invoke-WebRequest https://kr.bandisoft.com/bandizip/dl.php?old -OutFile C:\tmp\Bandizip_v6.29.exe
 	Write-Output "Installing Everything v1.4.1.992"
 	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://www.voidtools.com/Everything-1.4.1.992.x64-Setup.exe','C:\tmp\Everything_v1.4.1.992.exe')"

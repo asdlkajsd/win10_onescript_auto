@@ -1,7 +1,7 @@
 ##########
 # One Script Win10 Initial Setup Script
 # Primary Author Source: https://github.com/Disassembler0/Win10-Initial-Setup-Script
-#     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JJ8R4')"
+#     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JkEOe')"
 
 # Default preset
 $tweaks = @(

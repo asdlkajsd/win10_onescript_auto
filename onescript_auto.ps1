@@ -24,8 +24,8 @@ $tweaks = @(
 	#"DisableWiFiSense",             # "EnableWiFiSense",
 	"DisableSmartScreen",         # "EnableSmartScreen",
 	"DisableWebSearch",             # "EnableWebSearch",
-	#"DisableAppSuggestions",        # "EnableAppSuggestions",
-	#"DisableActivityHistory",       # "EnableActivityHistory",
+	"DisableAppSuggestions",        # "EnableAppSuggestions",
+	"DisableActivityHistory",       # "EnableActivityHistory",
 	#"DisableBackgroundApps",        # "EnableBackgroundApps",
 	"DisableLocationTracking",      # "EnableLocationTracking",
 	"DisableMapUpdates",            # "EnableMapUpdates",
@@ -40,7 +40,7 @@ $tweaks = @(
 
 	### Security Tweaks ###
 	"SetUACLow",                  # "SetUACHigh",
-	# "EnableSharingMappedDrives",  # "DisableSharingMappedDrives",
+	"EnableSharingMappedDrives",  # "DisableSharingMappedDrives",
 	# "DisableAdminShares",           # "EnableAdminShares",
 	#"DisableSMB1",                # "EnableSMB1",
 	# "DisableSMBServer",           # "EnableSMBServer",

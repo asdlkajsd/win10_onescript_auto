@@ -1,7 +1,8 @@
 # @2020 COPYRIGHT TO MINSEO CHOI 
 # @2020 COPYRIGHT TO WASHINGTON CHODAE CHURCH
 # LAST UPDATE: 2020-11-19
-# 	Activation Link: http://www.mediafire.com/file/ir5prt4cw7tuk4p/KMS_ACT_ORIGINAL.cmd/file
+# 	Activation Command Prompt Link: http://www.mediafire.com/file/ir5prt4cw7tuk4p/KMS_ACT_ORIGINAL.cmd/file
+#	Activation Powershell script: http://www.mediafire.com/file/wgo8r9zdas1j769/activation.ps1/file
 #
 #     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JkEOe')"
 # Default preset
@@ -2587,10 +2588,12 @@ Function RequireInternetAccess {
 #	Windows 10 Activations
 Function RequireActivations {
 	mkdir C:\tmp
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('http://download939.mediafire.com/7c5y04tpf0qg/ir5prt4cw7tuk4p/KMS_ACT_ORIGINAL.cmd','C:\tmp\activation.cmd')"
-	Invoke-WebRequest http://download939.mediafire.com/7c5y04tpf0qg/ir5prt4cw7tuk4p/KMS_ACT_ORIGINAL.cmd -OutFile C:\tmp\activation.cmd
-	start C:\tmp\activation.cmd
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('http://download1512.mediafire.com/2bd69qgs50rg/wgo8r9zdas1j769/activation.ps1','C:\tmp\activation.ps1')"
+	Invoke-WebRequest http://download1512.mediafire.com/2bd69qgs50rg/wgo8r9zdas1j769/activation.ps1 -OutFile C:\tmp\activation.ps1
+	$argList = "-file `c:\tmp\activation.ps1`""
+	start-process powershell -verb runAs -argumentlist $argList
 }
+
 
 # Wait for key press
 Function WaitForKey {

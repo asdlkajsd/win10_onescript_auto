@@ -16,6 +16,8 @@ $tweaks = @(
 	#"InstallBrave",
 	"InstallChrome",
 	"InstallJava",
+	"SpecialProgramDownload",
+	"SpecialProgramInstall"
 	# "ChangeDefaultApps", # Removed due to issues with steam and resetting default apps
 
 	### Windows Apps
@@ -166,8 +168,6 @@ $tweaks = @(
 	### Auxiliary Functions ###
 	
 	### Special Application ###
-	"SpecialProgramDownload",
-	"SpecialProgramInstall"
 )
 
 #########

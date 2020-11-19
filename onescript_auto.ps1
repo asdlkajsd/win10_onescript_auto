@@ -259,10 +259,6 @@ Function Install7Zip {
 	Show-Choco-Menu -Title "Do you want to install 7-Zip?" -ChocoInstall "7zip"
 }
 
-Function InstallNotepadplusplus {
-	Show-Choco-Menu -Title "Do you want to install Notepad++?" -ChocoInstall "notepadplusplus"
-}
-
 Function InstallVLC {
 	Show-Choco-Menu -Title "Do you want to install VLC?" -ChocoInstall "vlc"
 }
@@ -279,7 +275,6 @@ Function ChangeDefaultApps {
 
 Function InstallNotepadplusplus {
 	Show-Choco-Menu -Title "Do you want to install Notepad++?" -ChocoInstall "notepadplusplus"
-	Write-Output "Installing Notepad++"
 }
 
 Function InstallChrome {
@@ -287,8 +282,7 @@ Function InstallChrome {
 }
 
 Function InstallJava {
-	Show-Choco-Menu -Title "Do you want to install Java?" -ChocoInstall "jre8" -y
-	Write-Output "Installing Java"
+	Show-Choco-Menu -Title "Do you want to install Java?" -ChocoInstall "jre8"
 }
 
 Function SpecialProgramDownload {

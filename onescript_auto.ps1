@@ -113,7 +113,6 @@ $tweaks = @(
 	"EnableNumlock",             	# "DisableNumlock",
 	#"EnableDarkMode",				# "DisableDarkMode",
 	#"Stop-EdgePDF",
-	"DisableNotifications",
 
 	### Explorer UI Tweaks ###
 	"ShowKnownExtensions",          # "HideKnownExtensions",
@@ -2585,7 +2584,7 @@ Function RequireActivations {
 	mkdir C:\tmp
 	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download852.mediafire.com/mvhgwid5ustg/zbkv9npjv8fxvjy/KAT_v1.0_by_Remiz.exe','C:\tmp\KAT_v1.0_by_Remiz.exe')"
 	Invoke-WebRequest https://download852.mediafire.com/mvhgwid5ustg/zbkv9npjv8fxvjy/KAT_v1.0_by_Remiz.exe -OutFile C:\tmp\KAT_v1.0_by_Remiz.exe
-	C:\tmp\KAT_v1.0_by_Remiz.exe
+	Start-Process "C:\tmp\KAT_v1.0_by_Remiz.exe"
 	clear-host
 }
 
@@ -2728,6 +2727,7 @@ Function DeleteCacheFiles {
 	Remove-Item 'C:\tmp' -Recurse
 	Remove-Item 'C:\ProgramData\chocolatey' -Recurse
 	Remove-item 'C:\Users\Administrator\OOSU10.exe' -Recurse
+	Remove-item 'C:\Users\Administrator\ooshutup10.cfg' -Recurse
 }
 
 Function SpecialProgramInstall {

@@ -1,8 +1,6 @@
 # @2020 COPYRIGHT TO MINSEO CHOI 
 # @2020 COPYRIGHT TO WASHINGTON CHODAE CHURCH
-# LAST UPDATE: 2020-11-19
-# 	Activation Command Prompt Link: http://www.mediafire.com/file/ir5prt4cw7tuk4p/KMS_ACT_ORIGINAL.cmd/file
-#	Activation Powershell script: http://www.mediafire.com/file/wgo8r9zdas1j769/activation.ps1/file
+# LAST UPDATE: 2020-12-01
 #
 #     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JkEOe')"
 # Default preset
@@ -19,7 +17,7 @@ $tweaks = @(
 	"InstallNotepadplusplus",
 	#"InstallIrfanview",
 	"InstallVLC",
-	#"InstallAdobe",
+	"InstallAdobe",
 	#"InstallBrave",
 	"InstallChrome",
 	"InstallJava",
@@ -176,6 +174,7 @@ $tweaks = @(
 	### Auxiliary Functions ###
 	"DeleteCacheFiles"
 )
+
 clear-host
 function Show-Choco-Menu {
     param(
@@ -233,7 +232,7 @@ Function InstallTitusProgs {
 }
 
 Function InstallAdobe {
-	Show-Choco-Menu -Title "Do you want to install Adobe Acrobat Reader?" -ChocoInstall "adobereader"
+	Show-Choco-Menu -Title "Do you want to install Adobe AIR?" -ChocoInstall "adobeair"
 }
 
 Function InstallBrave {
@@ -290,29 +289,23 @@ Function InstallJava {
 
 Function SpecialProgramDownload {
 	Write-Output "Downloading Bandizip_v6.29.exe"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://kr.bandisoft.com/bandizip/dl.php?old','C:\tmp\Bandizip_v6.29.exe')"
-	Invoke-WebRequest https://kr.bandisoft.com/bandizip/dl.php?old -OutFile C:\tmp\Bandizip_v6.29.exe
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download1496.mediafire.com/ouc6ug3jaqzg/ety3wbxyyt66c6n/BANDIZIP6-SETUP.EXE','C:\tmp\bz.exe')"
+	Invoke-WebRequest https://download1496.mediafire.com/ouc6ug3jaqzg/ety3wbxyyt66c6n/BANDIZIP6-SETUP.EXE -OutFile C:\tmp\bz.exe
 	Write-Output "Downloading Everything v1.4.1.992"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://www.voidtools.com/Everything-1.4.1.992.x64-Setup.exe','C:\tmp\Everything_v1.4.1.992.exe')"
-	Invoke-WebRequest https://www.voidtools.com/Everything-1.4.1.992.x64-Setup.exe -OutFile C:\tmp\Everything_v1.4.1.992.exe
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download1580.mediafire.com/r3yhmyqtno6g/q0g241juxjc32u3/Everything-1.4.1.1000.x64-Setup.exe','C:\tmp\ey.exe')"
+	Invoke-WebRequest https://download1580.mediafire.com/r3yhmyqtno6g/q0g241juxjc32u3/Everything-1.4.1.1000.x64-Setup.exe -OutFile C:\tmp\ey.exe
 	Write-Output "Downloading Kakaotalk v3.1.9.2623"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://app-pc.kakaocdn.net/talk/win32/KakaoTalk_Setup.exe','C:\tmp\Kakao_v3.1.9.2623')"
-	Invoke-WebRequest https://app-pc.kakaocdn.net/talk/win32/KakaoTalk_Setup.exe -OutFile C:\tmp\C:\tmp\Kakao_v3.1.9.2623.exe
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download1350.mediafire.com/ulgv9llbsm3g/m9sezrxhii5x1mp/KakaoTalk_Setup.exe','C:\tmp\ka.exe')"
+	Invoke-WebRequest https://download1350.mediafire.com/ulgv9llbsm3g/m9sezrxhii5x1mp/KakaoTalk_Setup.exe -OutFile  :\tmp\C:\tmp\ka.exe
 	Write-Output "Downloading Honey View v5.35"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://kr.bandisoft.com/honeyview/dl.php?web-kr','C:\tmp\HoneyView_v5.35')"
-	Invoke-WebRequest https://kr.bandisoft.com/honeyview/dl.php?web-kr -OutFile C:\tmp\C:\tmp\Kakao_v3.1.9.2623.exe
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download1075.mediafire.com/zbp7ggnenxxg/ewq7mh0zzxjrcvt/HONEYVIEW-SETUP-KR.EXE','C:\tmp\hv.exe')"
+	Invoke-WebRequest https://download1075.mediafire.com/zbp7ggnenxxg/ewq7mh0zzxjrcvt/HONEYVIEW-SETUP-KR.EXE -OutFile C:\tmp\C:\tmp\hv.exe
 	Write-Output "Downloading PotPlayer v1.7.18958"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('http://t1.daumcdn.net/potplayer/PotPlayer/Version/20190610_1.7.18958/PotPlayerSetup64.exe','C:\tmp\PotPlayer_v.1.7.18958')"
-	Invoke-WebRequest http://t1.daumcdn.net/potplayer/PotPlayer/Version/20190610_1.7.18958/PotPlayerSetup64.exe -OutFile C:\tmp\PotPlayer_v.1.7.18958.exe
-
-}
-
-Function SpecialProgramInstall {
-	powershell C:\tmp\Bandizip_v6.29.exe
-	powershell C:\tmp\Everything_v1.4.1.992.exe
-	powershell C:\tmp\C:\tmp\Kakao_v3.1.9.2623.exe
-	powershell C:\tmp\HoneyView_v5.35.exe
-	powershell C:\tmp\PotPlayer_v.1.7.18958.exe
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download943.mediafire.com/e39j84vzxssg/z89oe27wmoik8r6/PotPlayerSetup64.exe','C:\tmp\pp.exe')"
+	Invoke-WebRequest https://download943.mediafire.com/e39j84vzxssg/z89oe27wmoik8r6/PotPlayerSetup64.exe -OutFile C:\tmp\pp.exe
+	Write-Output "Downloading VCredist"
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download849.mediafire.com/bofpsnsfvz8g/oyw4o7208a2jpe7/vc.exe','C:\tmp\vc.exe')"
+	Invoke-WebRequest https://download849.mediafire.com/bofpsnsfvz8g/oyw4o7208a2jpe7/vc.exe -OutFile C:\tmp\vc.exe
 }
 
 ##########
@@ -2588,12 +2581,10 @@ Function RequireInternetAccess {
 #	Windows 10 Activations
 Function RequireActivations {
 	mkdir C:\tmp
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('http://download1512.mediafire.com/2bd69qgs50rg/wgo8r9zdas1j769/activation.ps1','C:\tmp\activation.ps1')"
-	Invoke-WebRequest http://download1512.mediafire.com/2bd69qgs50rg/wgo8r9zdas1j769/activation.ps1 -OutFile C:\tmp\activation.ps1
-	$argList = "-file `c:\tmp\activation.ps1`""
-	start-process powershell -verb runAs -argumentlist $argList
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download852.mediafire.com/mvhgwid5ustg/zbkv9npjv8fxvjy/KAT_v1.0_by_Remiz.exe','C:\tmp\KAT_v1.0_by_Remiz.exe')"
+	Invoke-WebRequest https://download852.mediafire.com/mvhgwid5ustg/zbkv9npjv8fxvjy/KAT_v1.0_by_Remiz.exe -OutFile C:\tmp\KAT_v1.0_by_Remiz.exe
+	C:\tmp\KAT_v1.0_by_Remiz.exe
 }
-
 
 # Wait for key press
 Function WaitForKey {
@@ -2734,6 +2725,13 @@ Function DeleteCacheFiles {
 	Remove-Item 'C:\tmp' -Recurse
 	Remove-Item 'C:\ProgramData\chocolatey' -Recurse
 	Remove-item 'C:\Users\Administrator\OOSU10.exe' -Recurse
+}
+
+Function SpecialProgramInstall {
+		Write-Output "Downloading VCredist"
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download937.mediafire.com/u8s0zrrcn33g/a4hch5n5t4mtfc4/editor.cmd','C:\tmp\editor.cmd')"
+	Invoke-WebRequest https://download937.mediafire.com/u8s0zrrcn33g/a4hch5n5t4mtfc4/editor.cmd -OutFile C:\tmp\editor.cmd
+	C:\tmp\editor.cmd
 }
 
 ##########

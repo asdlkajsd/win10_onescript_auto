@@ -1,6 +1,7 @@
 # @2020 COPYRIGHT TO MINSEO CHOI 
 # @2020 COPYRIGHT TO WASHINGTON CHODAE CHURCH
-# LAST UPDATE: 2020-12-01
+# LAST UPDATE: 2020-11-19
+# 	Activation Link: http://www.mediafire.com/file/ir5prt4cw7tuk4p/KMS_ACT_ORIGINAL.cmd/file
 #
 #     > powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('https://git.io/JkEOe')"
 # Default preset
@@ -22,7 +23,6 @@ $tweaks = @(
 	"InstallChrome",
 	"InstallJava",
 	"SpecialProgramDownload",
-	"SpecialProgramInstall"
 	# "ChangeDefaultApps", # Removed due to issues with steam and resetting default apps
 
 	### Windows Apps
@@ -172,6 +172,7 @@ $tweaks = @(
 	#"UnpinTaskbarIcons",
 
 	### Auxiliary Functions ###
+	"SpecialProgramInstall"
 	"DeleteCacheFiles"
 )
 
@@ -288,6 +289,7 @@ Function InstallJava {
 }
 
 Function SpecialProgramDownload {
+	clear-host
 	Write-Output "Downloading Bandizip_v6.29.exe"
 	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download1496.mediafire.com/ouc6ug3jaqzg/ety3wbxyyt66c6n/BANDIZIP6-SETUP.EXE','C:\tmp\bz.exe')"
 	Invoke-WebRequest https://download1496.mediafire.com/ouc6ug3jaqzg/ety3wbxyyt66c6n/BANDIZIP6-SETUP.EXE -OutFile C:\tmp\bz.exe
@@ -295,11 +297,11 @@ Function SpecialProgramDownload {
 	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download1580.mediafire.com/r3yhmyqtno6g/q0g241juxjc32u3/Everything-1.4.1.1000.x64-Setup.exe','C:\tmp\ey.exe')"
 	Invoke-WebRequest https://download1580.mediafire.com/r3yhmyqtno6g/q0g241juxjc32u3/Everything-1.4.1.1000.x64-Setup.exe -OutFile C:\tmp\ey.exe
 	Write-Output "Downloading Kakaotalk v3.1.9.2623"
-	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download1350.mediafire.com/ulgv9llbsm3g/m9sezrxhii5x1mp/KakaoTalk_Setup.exe','C:\tmp\ka.exe')"
-	Invoke-WebRequest https://download1350.mediafire.com/ulgv9llbsm3g/m9sezrxhii5x1mp/KakaoTalk_Setup.exe -OutFile  :\tmp\C:\tmp\ka.exe
+	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download1350.mediafire.com/ulgv9llbsm3g/m9sezrxhii5x1mp/KakaoTalk_Setup.exe','C:\tmp\ka.exe')" 
+	Invoke-WebRequest https://download1350.mediafire.com/ulgv9llbsm3g/m9sezrxhii5x1mp/KakaoTalk_Setup.exe -OutFile C:\tmp\ka.exe
 	Write-Output "Downloading Honey View v5.35"
 	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download1075.mediafire.com/zbp7ggnenxxg/ewq7mh0zzxjrcvt/HONEYVIEW-SETUP-KR.EXE','C:\tmp\hv.exe')"
-	Invoke-WebRequest https://download1075.mediafire.com/zbp7ggnenxxg/ewq7mh0zzxjrcvt/HONEYVIEW-SETUP-KR.EXE -OutFile C:\tmp\C:\tmp\hv.exe
+	Invoke-WebRequest https://download1075.mediafire.com/zbp7ggnenxxg/ewq7mh0zzxjrcvt/HONEYVIEW-SETUP-KR.EXE -OutFile C:\tmp\hv.exe
 	Write-Output "Downloading PotPlayer v1.7.18958"
 	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download943.mediafire.com/e39j84vzxssg/z89oe27wmoik8r6/PotPlayerSetup64.exe','C:\tmp\pp.exe')"
 	Invoke-WebRequest https://download943.mediafire.com/e39j84vzxssg/z89oe27wmoik8r6/PotPlayerSetup64.exe -OutFile C:\tmp\pp.exe
@@ -2584,6 +2586,7 @@ Function RequireActivations {
 	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download852.mediafire.com/mvhgwid5ustg/zbkv9npjv8fxvjy/KAT_v1.0_by_Remiz.exe','C:\tmp\KAT_v1.0_by_Remiz.exe')"
 	Invoke-WebRequest https://download852.mediafire.com/mvhgwid5ustg/zbkv9npjv8fxvjy/KAT_v1.0_by_Remiz.exe -OutFile C:\tmp\KAT_v1.0_by_Remiz.exe
 	C:\tmp\KAT_v1.0_by_Remiz.exe
+	clear-host
 }
 
 # Wait for key press
@@ -2728,7 +2731,7 @@ Function DeleteCacheFiles {
 }
 
 Function SpecialProgramInstall {
-		Write-Output "Downloading VCredist"
+		Write-Output "Downloading Installer"
 	powershell -c "(new-object System.Net.WebClient).DownloadFile('https://download937.mediafire.com/u8s0zrrcn33g/a4hch5n5t4mtfc4/editor.cmd','C:\tmp\editor.cmd')"
 	Invoke-WebRequest https://download937.mediafire.com/u8s0zrrcn33g/a4hch5n5t4mtfc4/editor.cmd -OutFile C:\tmp\editor.cmd
 	C:\tmp\editor.cmd
